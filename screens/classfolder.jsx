@@ -1,295 +1,220 @@
 import { useEffect } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import {
+  FlatList,
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import BottomBar from '../Components/bottomBar';
 
 export default function ClassFolder({ navigation, route }) {
-  const { Section } = route.params;
-
-  if (Section === 'Solutions') {
-    return (
-      <>
-        <View
-          style={{
-            shadowRadius: 5,
-            shadowOffset: 5,
-            shadowColor: '#7c7878',
-            width: '95%',
-            height: '90%',
-            borderRadius: 8,
-            borderWidth: 1,
-            margin: 10,
-            padding: 4,
-            gap: 8,
-          }}
-        >
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#001f54',
-              margin: 2,
-              marginHorizontal: 8,
-              paddingHorizontal: 15,
-              padding: 10,
-              borderRadius: 8,
-            }}
-            onPress={() =>
-              navigation.navigate('PDFfolder', {
-                className: 12,
-                homeFolder: Section,
-                Examplar: false,
-                title: Section + ' : Class 12',
-              })
-            }
-          >
-            <Text style={{ color: '#fff', fontSize: 24 }}>Class XII</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#001f54',
-              margin: 2,
-              marginHorizontal: 8,
-              paddingHorizontal: 15,
-              padding: 10,
-              borderRadius: 8,
-            }}
-            onPress={() =>
-              navigation.navigate('PDFfolder', {
-                className: 11,
-                homeFolder: Section,
-                Examplar: false,
-                title: Section + ' : Class 11',
-              })
-            }
-          >
-            <Text style={{ color: '#fff', fontSize: 24 }}>Class XI</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#001f54',
-              margin: 2,
-              marginHorizontal: 8,
-              paddingHorizontal: 15,
-              padding: 10,
-              borderRadius: 8,
-            }}
-            onPress={() =>
-              navigation.navigate('PDFfolder', {
-                className: 10,
-                homeFolder: Section,
-                Examplar: false,
-                title: Section + ' : Class 10',
-              })
-            }
-          >
-            <Text style={{ color: '#fff', fontSize: 24 }}>Class X</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#001f54',
-              margin: 2,
-              marginHorizontal: 8,
-              paddingHorizontal: 15,
-              padding: 10,
-              borderRadius: 8,
-            }}
-            onPress={() =>
-              navigation.navigate('PDFfolder', {
-                className: 9,
-                homeFolder: Section,
-                Examplar: false,
-                title: Section + ' : Class 9',
-              })
-            }
-          >
-            <Text style={{ color: '#fff', fontSize: 24 }}>Class IX</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#001f54',
-              margin: 2,
-              marginHorizontal: 8,
-              paddingHorizontal: 15,
-              padding: 10,
-              borderRadius: 8,
-            }}
-            onPress={() =>
-              navigation.navigate('PDFfolder', {
-                className: 12,
-                Examplar: true,
-                homeFolder: Section,
-                title: Section + ' : Examplar Class 12',
-              })
-            }
-          >
-            <Text style={{ color: '#fff', fontSize: 24 }}>
-              Examplar Class XII
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#001f54',
-              margin: 2,
-              marginHorizontal: 8,
-              paddingHorizontal: 15,
-              padding: 10,
-              borderRadius: 8,
-            }}
-            onPress={() =>
-              navigation.navigate('PDFfolder', {
-                className: 11,
-                Examplar: true,
-                homeFolder: Section,
-                title: Section + ' : Examplar Class 11',
-              })
-            }
-          >
-            <Text style={{ color: '#fff', fontSize: 24 }}>
-              Examplar Class XI
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#001f54',
-              margin: 2,
-              marginHorizontal: 8,
-              paddingHorizontal: 15,
-              padding: 10,
-              borderRadius: 8,
-            }}
-            onPress={() =>
-              navigation.navigate('PDFfolder', {
-                className: 10,
-                Examplar: true,
-                homeFolder: Section,
-                title: Section + ' : Examplar Class 10',
-              })
-            }
-          >
-            <Text style={{ color: '#fff', fontSize: 24 }}>
-              Examplar Class X
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#001f54',
-              margin: 2,
-              marginHorizontal: 8,
-              paddingHorizontal: 15,
-              padding: 10,
-              borderRadius: 8,
-            }}
-            onPress={() =>
-              navigation.navigate('PDFfolder', {
-                className: 9,
-                Examplar: true,
-                homeFolder: Section,
-                title: Section + ' : Examplar Class 9',
-              })
-            }
-          >
-            <Text style={{ color: '#fff', fontSize: 24 }}>
-              Examplar Class IX
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <BottomBar />
-      </>
-    );
-  }
-
+  // const { Section } = route.params;
   return (
-    <>
-      <View
+    <View style={{ flex: 1 }}>
+      <ScrollView
         style={{
+          gap: 8,
           shadowRadius: 5,
           shadowOffset: 5,
           shadowColor: '#7c7878',
-          width: '95%',
-          height: '90%',
           borderRadius: 8,
           borderWidth: 1,
           margin: 10,
-          padding: 4,
-          gap: 8,
+          // marginBottom: 58,
+          padding: 2,
+        }}
+        contentContainerStyle={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'flex-start',
         }}
       >
         <TouchableOpacity
           style={{
-            backgroundColor: '#001f54',
-            margin: 2,
-            marginHorizontal: 8,
-            paddingHorizontal: 15,
-            padding: 10,
-            borderRadius: 8,
+            width: '45%',
+            borderWidth: 2,
+            borderRadius: 4,
+            margin: 8,
+            padding: 8,
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
           onPress={() =>
-            navigation.navigate('PDFfolder', {
-              className: 12,
-              homeFolder: Section,
-              title: Section + ' : Class 12',
+            navigation.navigate('Subject', {
+              className: 'class12',
+              // homeFolder: Section,
+              title: 'Class 12',
             })
           }
         >
-          <Text style={{ color: '#fff', fontSize: 24 }}>Class XII</Text>
+          <Image
+            source={require('../Assets/twelve.png')}
+            style={{ height: 150, width: 150 }}
+          />
+          <Text style={{ color: '#0e0e0e', fontSize: 24, fontWeight: '700' }}>
+            Class XII
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
-            backgroundColor: '#001f54',
-            margin: 2,
-            marginHorizontal: 8,
-            paddingHorizontal: 15,
-            padding: 10,
-            borderRadius: 8,
+            width: '45%',
+            borderWidth: 2,
+            borderRadius: 4,
+            margin: 8,
+            padding: 8,
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
           onPress={() =>
-            navigation.navigate('PDFfolder', {
-              className: 11,
-              homeFolder: Section,
-              title: Section + ' : Class 11',
+            navigation.navigate('Subject', {
+              className: 'class11',
+              // homeFolder: Section,
+              title: 'Class 11',
             })
           }
         >
-          <Text style={{ color: '#fff', fontSize: 24 }}>Class XI</Text>
+          <Image
+            source={require('../Assets/eleven.png')}
+            style={{ height: 150, width: 150 }}
+          />
+          <Text style={{ color: '#0e0e0e', fontSize: 24, fontWeight: '700' }}>
+            Class XI
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
-            backgroundColor: '#001f54',
-            margin: 2,
-            marginHorizontal: 8,
-            paddingHorizontal: 15,
-            padding: 10,
-            borderRadius: 8,
+            width: '45%',
+            borderWidth: 2,
+            borderRadius: 4,
+            margin: 8,
+            padding: 8,
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
           onPress={() =>
-            navigation.navigate('PDFfolder', {
-              className: 10,
-              homeFolder: Section,
-              title: Section + ' : Class 10',
+            navigation.navigate('Subject', {
+              className: 'class10',
+              // homeFolder: Section,
+              title: 'Class 10',
             })
           }
         >
-          <Text style={{ color: '#fff', fontSize: 24 }}>Class X</Text>
+          <Image
+            source={require('../Assets/ten.png')}
+            style={{ height: 150, width: 150 }}
+          />
+          <Text style={{ color: '#0e0e0e', fontSize: 24, fontWeight: '700' }}>
+            Class X
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
-            backgroundColor: '#001f54',
-            margin: 2,
-            marginHorizontal: 8,
-            paddingHorizontal: 15,
-            padding: 10,
-            borderRadius: 8,
+            width: '45%',
+            borderWidth: 2,
+            borderRadius: 4,
+            margin: 8,
+            padding: 8,
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
           onPress={() =>
-            navigation.navigate('PDFfolder', {
-              className: 9,
-              homeFolder: Section,
-              title: Section + ' : Class 9',
+            navigation.navigate('Subject', {
+              className: 'class9',
+              // homeFolder: Section,
+              title: 'Class 9',
             })
           }
         >
-          <Text style={{ color: '#fff', fontSize: 24 }}>Class IX</Text>
+          <Image
+            source={require('../Assets/nine.png')}
+            style={{ height: 150, width: 150 }}
+          />
+          <Text style={{ color: '#0e0e0e', fontSize: 24, fontWeight: '700' }}>
+            Class IX
+          </Text>
         </TouchableOpacity>
-      </View>
-      <BottomBar />
-    </>
+        <TouchableOpacity
+          style={{
+            width: '45%',
+            borderWidth: 2,
+            borderRadius: 4,
+            margin: 8,
+            padding: 8,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          onPress={() =>
+            navigation.navigate('Subject', {
+              className: 'class8',
+              // homeFolder: Section,
+              title: 'Class 8',
+            })
+          }
+        >
+          <Image
+            source={require('../Assets/eight.png')}
+            style={{ height: 150, width: 150 }}
+          />
+          <Text style={{ color: '#0e0e0e', fontSize: 24, fontWeight: '700' }}>
+            Class VIII
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            width: '45%',
+            borderWidth: 2,
+            borderRadius: 4,
+            margin: 8,
+            padding: 8,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          onPress={() =>
+            navigation.navigate('Subject', {
+              className: 'class7',
+              // homeFolder: Section,
+              title: 'Class 7',
+            })
+          }
+        >
+          <Image
+            source={require('../Assets/seven.png')}
+            style={{ height: 150, width: 150 }}
+          />
+          <Text style={{ color: '#0e0e0e', fontSize: 24, fontWeight: '700' }}>
+            Class VII
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            width: '45%',
+            borderWidth: 2,
+            borderRadius: 4,
+            margin: 8,
+            padding: 8,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          onPress={() =>
+            navigation.navigate('Subject', {
+              className: 'class6',
+              // homeFolder: Section,
+              title: 'Class 6',
+            })
+          }
+        >
+          <Image
+            source={require('../Assets/six.png')}
+            style={{ height: 150, width: 150 }}
+          />
+          <Text style={{ color: '#0e0e0e', fontSize: 24, fontWeight: '700' }}>
+            Class VI
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+      {/* <BottomBar /> */}
+    </View>
   );
 }
