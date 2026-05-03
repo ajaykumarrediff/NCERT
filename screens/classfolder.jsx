@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import {
   FlatList,
   Image,
@@ -7,10 +6,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import BottomBar from '../Components/bottomBar';
 
-export default function ClassFolder({ navigation, route }) {
-  // const { Section } = route.params;
+export default function ClassFolder({ navigation }) {
+
   return (
     <View style={{ flex: 1 }}>
       <ScrollView
@@ -214,7 +212,6 @@ export default function ClassFolder({ navigation, route }) {
           </Text>
         </TouchableOpacity>
       </ScrollView>
-      {/* <BottomBar /> */}
     </View>
   );
 }

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
-import BottomBar from '../Components/bottomBar';
 import JsonData from '../Assets/booklocation.json';
 
 export default function ListChapters({ navigation, route }) {
@@ -65,7 +64,6 @@ export default function ListChapters({ navigation, route }) {
           )}
         />
       </View>
-      {/* <BottomBar navigation={navigation} /> */}
     </>
   );
 }

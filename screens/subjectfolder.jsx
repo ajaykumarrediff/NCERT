@@ -1,5 +1,4 @@
 import { FlatList, Image, Text, TouchableOpacity } from 'react-native';
-import BottomBar from '../Components/bottomBar';
 import { useEffect, useState } from 'react';
 import JsonData from '../Assets/booklocation.json';
 
@@ -82,7 +81,6 @@ export default function SubjectFolder({ navigation, route }) {
           </TouchableOpacity>
         )}
       />
-      {/* <BottomBar navigation={navigation} /> */}
     </>
   );
 }

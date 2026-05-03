@@ -1,7 +1,6 @@
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity } from 'react-native';
 import JsonData from '../Assets/booklocation.json';
 import { useEffect, useState } from 'react';
-import BottomBar from '../Components/bottomBar';
 
 export default function BookFolder({ navigation, route }) {
   const { className, Subject, Section } = route.params;
@@ -26,7 +25,6 @@ export default function BookFolder({ navigation, route }) {
         keyExtractor={item => item.code}
         contentContainerStyle={{ padding: 8 }}
         columnWrapperStyle={{ justifyContent: 'space-between' }}
-        // style={{ marginBottom: 50 }}
         renderItem={({ item }) => (
           <TouchableOpacity
             style={{
@@ -65,7 +63,6 @@ export default function BookFolder({ navigation, route }) {
           </TouchableOpacity>
         )}
       />
-      {/* <BottomBar navigation={navigation} /> */}
     </>
   );
 }

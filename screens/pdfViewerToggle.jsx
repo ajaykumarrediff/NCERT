@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   ActivityIndicator,
@@ -13,9 +13,7 @@ import FileViewer from 'react-native-file-viewer';
 import NetInfo from '@react-native-community/netinfo';
 import * as Progress from 'react-native-progress';
 
-// const { FloatingModule } = NativeModules;
-
-export default function PDFViewer({ route }) {
+export default function PDFViewerToggle({ route }) {
   const { className, Subject, book, code } = route.params;
 
   const [pdfPath, setPdfPath] = useState(null);
